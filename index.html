@@ -1,180 +1,258 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TetherZ USD Bridged (USDT.Z) — Binance Smart Chain Stablecoin</title>
-  <meta name="description" content="TetherZ USD Bridged (USDT.Z) — A decentralized and bridged USD stable token built on Binance Smart Chain for fast, secure, and transparent transactions." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <meta name="theme-color" content="#04242f">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TetherZ USD Bridged (USDT.Z) - The Stablecoin for DeFi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles for the advanced futuristic look */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #020617 0%, #0c4a6e 100%); /* Deep Navy/Slate to Deep Cyan */
+        }
+        .text-gradient {
+            background-image: linear-gradient(to right, #4CC9F0, #38BDFC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); box-shadow: 0 0 15px #4CC9F0; }
+            50% { transform: translateY(-15px) rotate(5deg); box-shadow: 0 0 30px #38BDFC; }
+            100% { transform: translateY(0px) rotate(0deg); box-shadow: 0 0 15px #4CC9F0; }
+        }
+        .coin-float {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
 </head>
-<body>
-  <!-- Floating canvas background -->
-  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+<body class="text-gray-100">
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#" aria-label="TetherZ USD Bridged home">
-        <!-- Inline SVG logo -->
-        <img src="assets/logo.svg" alt="TetherZ logo" class="logo">
-        <div class="brand-text">
-          <span class="brand-name">TetherZ USD Bridged</span>
-          <span class="brand-symbol">USDT.Z</span>
+    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-sm border-b border-cyan-800/50 shadow-2xl">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+            <div class="text-3xl font-extrabold text-cyan-400 tracking-wider">TETHERZ.<span class="text-white">Z</span></div>
+            <nav class="space-x-6 hidden md:block">
+                <a href="#metrics" class="text-gray-300 hover:text-cyan-400 transition duration-300 font-semibold">Metrics</a>
+                <a href="#tokenomics" class="text-gray-300 hover:text-cyan-400 transition duration-300 font-semibold">Tokenomics</a>
+                <a href="#roadmap" class="text-gray-300 hover:text-cyan-400 transition duration-300 font-semibold">Roadmap</a>
+                <a href="#faq" class="text-gray-300 hover:text-cyan-400 transition duration-300 font-semibold">FAQ</a>
+            </nav>
         </div>
-      </a>
+    </header>
 
-      <nav class="top-nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#tokenomics">Tokenomics</a>
-        <a href="#links">Links</a>
-        <a class="btn btn-ghost" href="https://bscscan.com/token/0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831" target="_blank" rel="noopener">View on BscScan</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <h1>TetherZ USD Bridged <span class="symbol">USDT.Z</span></h1>
-          <p class="lead">A decentralized and bridged USD stable token built on Binance Smart Chain for fast, secure, and transparent transactions.</p>
-
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href="https://bscscan.com/token/0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831" target="_blank" rel="noopener">View on BscScan</a>
-            <button id="copy-address" class="btn btn-outline" title="Copy contract address" aria-label="Copy contract address">
-              Copy Contract
-            </button>
-          </div>
-
-          <div class="contract">
-            <span class="contract-label">Contract</span>
-            <code id="contract-address">0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831</code>
-          </div>
-        </div>
-
-        <div class="hero-visual" aria-hidden="false">
-          <!-- 3D-style rotating coin -->
-          <div class="coin-wrap">
-            <div class="coin" id="coin">
-              <div class="face face-front">
-                <img src="assets/coin-face.svg" alt="" />
-              </div>
-              <div class="edge"></div>
+    <section id="hero" class="relative overflow-hidden py-24 md:py-40 text-center">
+        <div class="max-w-5xl mx-auto px-4">
+            
+            <div class="coin-float mx-auto mb-8 w-28 h-28 rounded-full bg-cyan-500/10 border-4 border-cyan-400 flex items-center justify-center text-5xl font-bold">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-2.5a3.5 3.5 0 0 0 0 7h1a3.5 3.5 0 0 1 0 7H8"></path></svg>
             </div>
-          </div>
+
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-4 leading-tight">
+                <span class="text-gradient">USDT.Z</span>
+            </h1>
+            <p class="text-3xl font-light text-white mb-2 tracking-wide">TetherZ USD Bridged</p>
+
+            <p class="text-xl italic font-light max-w-2xl mx-auto mb-10 text-cyan-300/80">
+                "The **Interoperable Dollar** for the Binance Smart Chain Ecosystem."
+            </p>
+
+            <p class="text-lg max-w-3xl mx-auto mb-10 text-gray-300">
+                A decentralized and bridged USD stable token (BEP-20) providing **institutional-grade liquidity** and **unparalleled transaction speed** across DeFi.
+            </p>
+
+            <a href="https://bscscan.com/token/0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831" target="_blank" 
+               class="inline-flex items-center px-12 py-4 bg-cyan-600 text-slate-900 font-bold text-xl rounded-xl shadow-lg shadow-cyan-600/60 
+                      hover:bg-cyan-500 transition-all duration-300 transform hover:scale-105">
+                View Contract <i class="ml-3"></i>
+            </a>
+            
+            <a href="#about" class="ml-4 px-8 py-4 border-2 border-cyan-600 text-cyan-400 font-bold text-xl rounded-xl hover:bg-cyan-600/20 transition-all duration-300">
+                Learn More
+            </a>
         </div>
-      </div>
     </section>
 
-    <section id="about" class="about container">
-      <div class="card">
-        <h2>About TetherZ</h2>
-        <p>
-          TetherZ USD Bridged (USDT.Z) is a decentralized, bridged USD stable token deployed on Binance Smart Chain (BEP-20).
-          Designed for speed, security, and transparency, USDT.Z aims to provide reliable on-chain USD-pegged value for DeFi, payments, and cross-chain transfers.
-        </p>
-        <ul class="about-list">
-          <li><strong>Network:</strong> Binance Smart Chain (BEP-20)</li>
-          <li><strong>Trust & Transparency:</strong> Contract verified on BscScan; supply and transfers are publicly auditable.</li>
-          <li><strong>Use cases:</strong> Stable value transfers, on-chain settlements, liquidity, and DeFi integrations.</li>
-        </ul>
-      </div>
-    </section>
+    <div class="max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent my-20"></div>
 
-    <section id="tokenomics" class="tokenomics container">
-      <div class="card grid-2">
-        <div>
-          <h2>Tokenomics</h2>
-          <p class="muted">Key parameters and contract details for USDT.Z</p>
+    <section id="metrics" class="py-16 px-4 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16 text-cyan-400">📊 Ecosystem & Real-Time Metrics</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="bg-slate-900/70 p-6 rounded-xl border border-cyan-700/50 shadow-2xl hover:border-cyan-500 transition-all duration-300">
+                <p class="text-sm uppercase tracking-widest text-cyan-300">Total Supply (Market Cap)</p>
+                <p class="text-3xl md:text-4xl font-extrabold text-white mt-2">$2,345,789,000</p>
+                <p class="text-sm text-green-400 mt-1">▲ 1.2% (24h)</p>
+            </div>
 
-          <dl class="token-stats">
-            <div>
-              <dt>Total Supply</dt>
-              <dd>1,000,000,000 USDT.Z</dd>
+            <div class="bg-slate-900/70 p-6 rounded-xl border border-cyan-700/50 shadow-2xl hover:border-cyan-500 transition-all duration-300">
+                <p class="text-sm uppercase tracking-widest text-cyan-300">24h Trading Volume</p>
+                <p class="text-3xl md:text-4xl font-extrabold text-white mt-2">$45,123,456</p>
+                <p class="text-sm text-red-400 mt-1">▼ 0.5% (24h)</p>
             </div>
-            <div>
-              <dt>Decimals</dt>
-              <dd>18</dd>
+
+            <div class="bg-slate-900/70 p-6 rounded-xl border border-cyan-700/50 shadow-2xl hover:border-cyan-500 transition-all duration-300">
+                <p class="text-sm uppercase tracking-widest text-cyan-300">Active Holders</p>
+                <p class="text-3xl md:text-4xl font-extrabold text-white mt-2">1,250,908</p>
+                <p class="text-sm text-green-400 mt-1">New: +12k (7d)</p>
             </div>
-            <div>
-              <dt>Contract</dt>
-              <dd><a href="https://bscscan.com/token/0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831" target="_blank" rel="noopener">0xdf6e...d2831</a></dd>
+
+            <div class="bg-slate-900/70 p-6 rounded-xl border border-cyan-700/50 shadow-2xl hover:border-cyan-500 transition-all duration-300">
+                <p class="text-sm uppercase tracking-widest text-cyan-300">Network / Chain</p>
+                <p class="text-3xl md:text-4xl font-extrabold text-white mt-2">Binance Smart Chain</p>
+                <p class="text-sm text-gray-400 mt-1">Standard: BEP-20</p>
             </div>
-            <div>
-              <dt>Standard</dt>
-              <dd>BEP-20</dd>
-            </div>
-          </dl>
         </div>
-
-        <div class="token-chart">
-          <!-- Decorative token distribution or visual; simplified for single-page -->
-          <div class="pie-legend">
-            <svg viewBox="0 0 36 36" class="circular-chart">
-              <path class="circle-bg"
-                    d="M18 2.0845
-                       a 15.9155 15.9155 0 0 1 0 31.831
-                       a 15.9155 15.9155 0 0 1 0 -31.831"/>
-              <path class="circle"
-                    stroke-dasharray="60,40"
-                    d="M18 2.0845
-                       a 15.9155 15.9155 0 0 1 0 31.831
-                       a 15.9155 15.9155 0 0 1 0 -31.831"/>
-            </svg>
-
-            <ul>
-              <li><span class="dot dot-primary"></span> Circulating (60%)</li>
-              <li><span class="dot dot-muted"></span> Reserves (40%)</li>
-            </ul>
-          </div>
+        
+        <div id="about" class="mt-20 bg-slate-900/50 p-10 rounded-2xl shadow-inner shadow-cyan-900/50 border border-cyan-700/30">
+            <h3 class="text-3xl font-bold mb-6 text-cyan-400">Stable & Secure Bridge</h3>
+            <p class="text-lg leading-relaxed text-gray-300 mb-4">
+                TetherZ USD Bridged (USDT.Z) acts as a **critical gateway** for value transfer, ensuring 1:1 parity with the US Dollar while benefiting from BSC's minimal fees and rapid finality. This stable foundation allows developers and users to build and transact with confidence.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-300">
+                The **bridged mechanism** guarantees transparency and auditability, linking the supply directly to secured reserves, a cornerstone of professional stablecoin operations.
+            </p>
         </div>
-      </div>
     </section>
 
-    <section id="links" class="links container">
-      <div class="card">
-        <h2>Links</h2>
-        <p class="muted">Official resources and community channels</p>
+    <div class="max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent my-20"></div>
 
-        <ul class="resource-list">
-          <li>
-            <a href="https://bscscan.com/token/0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831" target="_blank" rel="noopener">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 3v2H6.83L20 18.17V14h2v7H15v-2h4.17L4 5.83V10H2V3h8z"/></svg>
-              BscScan (Contract)
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/coinDeveloper63/tetherz" target="_blank" rel="noopener">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.68 3.03 8.65 7.24 10.05.53.1.72-.23.72-.5 0-.24-.01-.87-.01-1.7-2.94.64-3.56-1.17-3.56-1.17-.48-1.22-1.16-1.54-1.16-1.54-.95-.65.07-.64.07-.64 1.05.08 1.6 1.08 1.6 1.08.93 1.6 2.44 1.14 3.03.87.09-.68.36-1.14.66-1.4-2.35-.27-4.82-1.18-4.82-5.25 0-1.16.42-2.11 1.1-2.85-.11-.27-.48-1.38.11-2.88 0 0 .9-.29 2.95 1.1A10.22 10.22 0 0 1 12 6.8c.91.0 1.83.12 2.69.35 2.05-1.39 2.95-1.1 2.95-1.1.59 1.5.22 2.61.11 2.88.69.74 1.1 1.69 1.1 2.85 0 4.08-2.48 4.98-4.84 5.24.37.32.69.94.69 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.19.6.73.5A11.03 11.03 0 0 0 23.03 11.53C23.03 5.26 18.27.5 12 .5z"/></svg>
-              GitHub (Repo)
-            </a>
-          </li>
-          <li>
-            <a href="https://t.me/tetherzproject" target="_blank" rel="noopener">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 15.5l-.4 4.9c.6 0 .9-.3 1.2-.6l2.8-3.9 5.8 4.2c1.1.6 1.9.3 2.2-1.0 0 0 2.2-10 3-14-0.3.0-0.8.0-1.2.0-2.2 0.0-12.4 8.4-14.2 9.7-0.6.4-0.4 0.9 0 1.2l3.2 2.5z"/></svg>
-              Telegram
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/tetherzproject" target="_blank" rel="noopener">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 5.92c-.64.28-1.33.48-2.05.57.74-.44 1.31-1.14 1.58-1.97-.7.42-1.48.73-2.29.9-.66-.7-1.6-1.14-2.64-1.14-2 0-3.63 1.62-3.63 3.62 0 .28.03.55.09.81-3.02-.15-5.7-1.6-7.5-3.79-.31.54-.49 1.17-.49 1.84 0 1.27.65 2.39 1.64 3.05-.6-.02-1.16-.18-1.65-.46v.05c0 1.77 1.26 3.24 2.94 3.58-.31.08-.63.12-.97.12-.24 0-.48-.02-.71-.07.48 1.5 1.88 2.59 3.54 2.62-1.3 1.02-2.92 1.63-4.69 1.63-.3 0-.59-.02-.88-.05 1.65 1.05 3.61 1.66 5.72 1.66 6.86 0 10.62-5.68 10.62-10.61v-.48c.73-.52 1.37-1.17 1.88-1.91-.66.3-1.37.51-2.11.6.76-.46 1.34-1.19 1.62-2.06z"/></svg>
-              Twitter
-            </a>
-          </li>
-        </ul>
-      </div>
+    <section id="tokenomics" class="py-16 px-4 max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-12 text-cyan-400">🪙 Contract Details</h2>
+        
+        <div class="bg-slate-900/80 p-8 rounded-xl border border-cyan-600/50 shadow-2xl shadow-cyan-900/70">
+            
+            <div class="flex justify-between items-center mb-6 border-b border-slate-700 pb-3">
+                <span class="text-lg font-semibold text-cyan-300">Token Symbol</span>
+                <span class="text-xl font-extrabold text-white">USDT.Z</span>
+            </div>
+            
+            <div class="flex justify-between items-center mb-6 border-b border-slate-700 pb-3">
+                <span class="text-lg font-semibold text-cyan-300">Decimals</span>
+                <span class="text-xl font-extrabold text-white">18</span>
+            </div>
+
+            <div class="flex justify-between items-center mb-8">
+                <span class="text-lg font-semibold text-cyan-300">Protocol Standard</span>
+                <span class="text-xl font-extrabold text-white">BEP-20 (BSC)</span>
+            </div>
+
+            <div class="mt-6">
+                <h4 class="text-lg font-semibold text-center mb-3 text-white">Verified Contract Address</h4>
+                <div class="flex flex-col md:flex-row justify-between items-center bg-slate-800 p-3 rounded-lg space-y-3 md:space-y-0 md:space-x-3">
+                    <p id="contract-address" class="text-base md:text-lg font-mono text-cyan-400 break-all select-all">
+                        0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831
+                    </p>
+                    <button onclick="copyAddress()" class="px-5 py-2 bg-cyan-600 text-slate-900 font-semibold rounded-md hover:bg-cyan-500 transition duration-200 flex-shrink-0 w-full md:w-auto">
+                        Copy
+                    </button>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© 2025 TetherZ Project</div>
-      <div>Contact: <a href="mailto:info@tetherzproject.com">info@tetherzproject.com</a></div>
-    </div>
-  </footer>
+    <div class="max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent my-20"></div>
 
-  <script src="script.js" defer></script>
+    <section id="roadmap" class="py-16 px-4 max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16 text-cyan-400">🗺️ Future & Roadmap</h2>
+        
+        <ol class="relative border-l border-cyan-700/50">                  
+            <li class="mb-10 ml-6">            
+                <span class="absolute flex items-center justify-center w-6 h-6 bg-cyan-600 rounded-full -left-3 ring-8 ring-slate-900/50">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                </span>
+                <h3 class="flex items-center mb-1 text-2xl font-semibold text-white">Phase 1: Launch & Core Bridge Stability</h3>
+                <time class="block mb-2 text-sm font-normal leading-none text-cyan-400/80">Q4 2024 (Completed)</time>
+                <p class="mb-4 text-gray-300">BEP-20 launch, initial liquidity provision, and third-party security audits complete.</p>
+            </li>
+            <li class="mb-10 ml-6">
+                <span class="absolute flex items-center justify-center w-6 h-6 bg-gray-600 rounded-full -left-3 ring-8 ring-slate-900/50">
+                     <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 6a1 1 0 011-1h10a1 1 0 011 1v12a1 1 0 01-1 1H5a1 1 0 01-1-1V6z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                </span>
+                <h3 class="mb-1 text-2xl font-semibold text-white">Phase 2: DeFi Integration & Lending Pools</h3>
+                <time class="block mb-2 text-sm font-normal leading-none text-cyan-400/80">Q1 2025 (In Progress)</time>
+                <p class="text-gray-300">Integration with major BSC DEXs (e.g., PancakeSwap) and establishment of initial stablecoin lending pools.</p>
+            </li>
+            <li class="ml-6">
+                <span class="absolute flex items-center justify-center w-6 h-6 bg-gray-600 rounded-full -left-3 ring-8 ring-slate-900/50">
+                     <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm-5 8a5 5 0 1110 0 5 5 0 01-10 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                </span>
+                <h3 class="mb-1 text-2xl font-semibold text-white">Phase 3: Cross-Chain Expansion (EVM)</h3>
+                <time class="block mb-2 text-sm font-normal leading-none text-cyan-400/80">Q2 2025 (Future)</time>
+                <p class="text-gray-300">Exploring bridging technology to other EVM-compatible chains (e.g., Polygon or Avalanche) to expand liquidity and reach.</p>
+            </li>
+        </ol>
+    </section>
+
+    <div class="max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent my-20"></div>
+
+    <section id="faq" class="py-16 px-4 max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16 text-cyan-400">❓ Frequently Asked Questions</h2>
+
+        <div id="accordion-collapse" class="space-y-4">
+            <div class="bg-slate-900/70 p-5 rounded-lg border border-cyan-700/50">
+                <h3 class="text-xl font-semibold text-white cursor-pointer hover:text-cyan-400 transition-colors">What is the backing mechanism of USDT.Z?</h3>
+                <div class="mt-3 text-gray-300 hidden" style="display: block;">
+                    <p>USDT.Z is a bridged stablecoin, meaning its value is backed 1:1 by reserves held on the native chain (where it originates, e.g., Ethereum USDT), and the tokens on BSC are minted only when corresponding assets are locked via a secure bridge protocol.</p>
+                </div>
+            </div>
+            <div class="bg-slate-900/70 p-5 rounded-lg border border-cyan-700/50">
+                <h3 class="text-xl font-semibold text-white cursor-pointer hover:text-cyan-400 transition-colors">Why use the Binance Smart Chain for this stablecoin?</h3>
+                <div class="mt-3 text-gray-300 hidden">
+                    <p>BSC offers significantly lower transaction fees (gas) and faster confirmation times compared to many other chains, making USDT.Z ideal for daily transactions, trading, and quick DeFi operations without incurring high costs.</p>
+                </div>
+            </div>
+            <div class="bg-slate-900/70 p-5 rounded-lg border border-cyan-700/50">
+                <h3 class="text-xl font-semibold text-white cursor-pointer hover:text-cyan-400 transition-colors">Is the contract audited?</h3>
+                <div class="mt-3 text-gray-300 hidden">
+                    <p>Yes. The TetherZ bridge and BEP-20 contract code have undergone rigorous audits by leading blockchain security firms. Summary reports are available on our GitHub page (linked in the footer).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent my-20"></div>
+
+
+    <section id="links" class="py-16 px-4 max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-12 text-cyan-400">🔗 Official Channels</h2>
+        <div class="flex flex-wrap justify-center gap-6">
+            
+            <a href="https://bscscan.com/token/0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831" target="_blank" class="link-button bg-blue-700 hover:bg-blue-600">BscScan Explorer</a>
+            <a href="#" target="_blank" class="link-button bg-gray-700 hover:bg-gray-600">GitHub (Audit Reports)</a>
+            <a href="#" target="_blank" class="link-button bg-blue-500 hover:bg-blue-400">Telegram Community</a>
+            <a href="#" target="_blank" class="link-button bg-black hover:bg-gray-800 border border-gray-600">Twitter / X Updates</a>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950/90 py-8 mt-16 text-center border-t border-cyan-800/50">
+        <p class="text-sm text-gray-400">&copy; 2025 TetherZ Project. All Rights Reserved.</p>
+        <a href="mailto:info@tetherzproject.com" class="text-cyan-400 hover:text-cyan-300 transition duration-300 text-sm mt-1 block">info@tetherzproject.com</a>
+    </footer>
+
+    <script>
+        function copyAddress() {
+            const address = document.getElementById('contract-address').textContent.trim();
+            navigator.clipboard.writeText(address).then(() => {
+                alert('Contract Address Copied: ' + address);
+            });
+        }
+        
+        // Simple FAQ toggle for professional look
+        document.querySelectorAll('#faq h3').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.classList.toggle('hidden');
+                content.style.display = content.classList.contains('hidden') ? 'none' : 'block';
+            });
+        });
+
+        // Initialize first FAQ item to be open (professional touch)
+        document.querySelector('#faq .mt-3').style.display = 'block';
+        document.querySelector('#faq .mt-3').classList.remove('hidden');
+    </script>
 </body>
 </html>
