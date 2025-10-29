@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TetherZ USD Bridged (USDT.Z) — Binance Smart Chain Stablecoin</title>
+  <meta name="description" content="TetherZ USD Bridged (USDT.Z) — A decentralized and bridged USD stable token built on Binance Smart Chain for fast, secure, and transparent transactions." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#04242f">
+</head>
+<body>
+  <!-- Floating canvas background -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="TetherZ USD Bridged home">
+        <!-- Inline SVG logo -->
+        <img src="assets/logo.svg" alt="TetherZ logo" class="logo">
+        <div class="brand-text">
+          <span class="brand-name">TetherZ USD Bridged</span>
+          <span class="brand-symbol">USDT.Z</span>
+        </div>
+      </a>
+
+      <nav class="top-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#links">Links</a>
+        <a class="btn btn-ghost" href="https://bscscan.com/token/0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831" target="_blank" rel="noopener">View on BscScan</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>TetherZ USD Bridged <span class="symbol">USDT.Z</span></h1>
+          <p class="lead">A decentralized and bridged USD stable token built on Binance Smart Chain for fast, secure, and transparent transactions.</p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="https://bscscan.com/token/0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831" target="_blank" rel="noopener">View on BscScan</a>
+            <button id="copy-address" class="btn btn-outline" title="Copy contract address" aria-label="Copy contract address">
+              Copy Contract
+            </button>
+          </div>
+
+          <div class="contract">
+            <span class="contract-label">Contract</span>
+            <code id="contract-address">0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831</code>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="false">
+          <!-- 3D-style rotating coin -->
+          <div class="coin-wrap">
+            <div class="coin" id="coin">
+              <div class="face face-front">
+                <img src="assets/coin-face.svg" alt="" />
+              </div>
+              <div class="edge"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <div class="card">
+        <h2>About TetherZ</h2>
+        <p>
+          TetherZ USD Bridged (USDT.Z) is a decentralized, bridged USD stable token deployed on Binance Smart Chain (BEP-20).
+          Designed for speed, security, and transparency, USDT.Z aims to provide reliable on-chain USD-pegged value for DeFi, payments, and cross-chain transfers.
+        </p>
+        <ul class="about-list">
+          <li><strong>Network:</strong> Binance Smart Chain (BEP-20)</li>
+          <li><strong>Trust & Transparency:</strong> Contract verified on BscScan; supply and transfers are publicly auditable.</li>
+          <li><strong>Use cases:</strong> Stable value transfers, on-chain settlements, liquidity, and DeFi integrations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="tokenomics" class="tokenomics container">
+      <div class="card grid-2">
+        <div>
+          <h2>Tokenomics</h2>
+          <p class="muted">Key parameters and contract details for USDT.Z</p>
+
+          <dl class="token-stats">
+            <div>
+              <dt>Total Supply</dt>
+              <dd>1,000,000,000 USDT.Z</dd>
+            </div>
+            <div>
+              <dt>Decimals</dt>
+              <dd>18</dd>
+            </div>
+            <div>
+              <dt>Contract</dt>
+              <dd><a href="https://bscscan.com/token/0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831" target="_blank" rel="noopener">0xdf6e...d2831</a></dd>
+            </div>
+            <div>
+              <dt>Standard</dt>
+              <dd>BEP-20</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="token-chart">
+          <!-- Decorative token distribution or visual; simplified for single-page -->
+          <div class="pie-legend">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg"
+                    d="M18 2.0845
+                       a 15.9155 15.9155 0 0 1 0 31.831
+                       a 15.9155 15.9155 0 0 1 0 -31.831"/>
+              <path class="circle"
+                    stroke-dasharray="60,40"
+                    d="M18 2.0845
+                       a 15.9155 15.9155 0 0 1 0 31.831
+                       a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            </svg>
+
+            <ul>
+              <li><span class="dot dot-primary"></span> Circulating (60%)</li>
+              <li><span class="dot dot-muted"></span> Reserves (40%)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="links" class="links container">
+      <div class="card">
+        <h2>Links</h2>
+        <p class="muted">Official resources and community channels</p>
+
+        <ul class="resource-list">
+          <li>
+            <a href="https://bscscan.com/token/0xdf6ebb9dcb025337f4aeb042e2b3915aa32d2831" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 3v2H6.83L20 18.17V14h2v7H15v-2h4.17L4 5.83V10H2V3h8z"/></svg>
+              BscScan (Contract)
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/coinDeveloper63/tetherz" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.73.5.97 5.26.97 11.53c0 4.68 3.03 8.65 7.24 10.05.53.1.72-.23.72-.5 0-.24-.01-.87-.01-1.7-2.94.64-3.56-1.17-3.56-1.17-.48-1.22-1.16-1.54-1.16-1.54-.95-.65.07-.64.07-.64 1.05.08 1.6 1.08 1.6 1.08.93 1.6 2.44 1.14 3.03.87.09-.68.36-1.14.66-1.4-2.35-.27-4.82-1.18-4.82-5.25 0-1.16.42-2.11 1.1-2.85-.11-.27-.48-1.38.11-2.88 0 0 .9-.29 2.95 1.1A10.22 10.22 0 0 1 12 6.8c.91.0 1.83.12 2.69.35 2.05-1.39 2.95-1.1 2.95-1.1.59 1.5.22 2.61.11 2.88.69.74 1.1 1.69 1.1 2.85 0 4.08-2.48 4.98-4.84 5.24.37.32.69.94.69 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.19.6.73.5A11.03 11.03 0 0 0 23.03 11.53C23.03 5.26 18.27.5 12 .5z"/></svg>
+              GitHub (Repo)
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/tetherzproject" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 15.5l-.4 4.9c.6 0 .9-.3 1.2-.6l2.8-3.9 5.8 4.2c1.1.6 1.9.3 2.2-1.0 0 0 2.2-10 3-14-0.3.0-0.8.0-1.2.0-2.2 0.0-12.4 8.4-14.2 9.7-0.6.4-0.4 0.9 0 1.2l3.2 2.5z"/></svg>
+              Telegram
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/tetherzproject" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 5.92c-.64.28-1.33.48-2.05.57.74-.44 1.31-1.14 1.58-1.97-.7.42-1.48.73-2.29.9-.66-.7-1.6-1.14-2.64-1.14-2 0-3.63 1.62-3.63 3.62 0 .28.03.55.09.81-3.02-.15-5.7-1.6-7.5-3.79-.31.54-.49 1.17-.49 1.84 0 1.27.65 2.39 1.64 3.05-.6-.02-1.16-.18-1.65-.46v.05c0 1.77 1.26 3.24 2.94 3.58-.31.08-.63.12-.97.12-.24 0-.48-.02-.71-.07.48 1.5 1.88 2.59 3.54 2.62-1.3 1.02-2.92 1.63-4.69 1.63-.3 0-.59-.02-.88-.05 1.65 1.05 3.61 1.66 5.72 1.66 6.86 0 10.62-5.68 10.62-10.61v-.48c.73-.52 1.37-1.17 1.88-1.91-.66.3-1.37.51-2.11.6.76-.46 1.34-1.19 1.62-2.06z"/></svg>
+              Twitter
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2025 TetherZ Project</div>
+      <div>Contact: <a href="mailto:info@tetherzproject.com">info@tetherzproject.com</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
